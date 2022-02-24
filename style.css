@@ -2,13 +2,27 @@ header {
   margin-left: 2rem;
 }
 
-.hidden {
-  /* display:none; */
+
+
+.container {
+  visibility: hidden;
+  margin-left: 10px;
+  margin-top: 10px;
 
 }
 
-.container {
-  background-color: pink;
-  margin-left: 10px;
-  margin-top: 10px;
+.one {
+  background-color: bisque;
+  height: 15rem;
+
+}
+
+.two {
+  background-color: antiquewhite;
+  height: 15rem;
+}
+
+.optionButtons {
+  
+  
 }
