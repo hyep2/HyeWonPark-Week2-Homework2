@@ -21,28 +21,31 @@
     <button type="button" class="btn btn-success" id="start">Start</button>
   </header>
 
-  <!-- this is the container consisting of question and answer choices aka option -->
-  <div class="container" >
-    <div class="row">
-      <div class="col one">
-        Question
-        <div id="question"></div>
-      </div>
-
-      <div class="col two">
-        Option
-        <div class="optionButtons">
-          <input type="button" value="" class="optionClass" id="myButton1"></input>
-          <br>
-          <input type="button" value="" class="optionClass"id="myButton2"></input>
-          <br>
-          <input type="button" value="" class="optionClass" id="myButton3"></input>
-          
+  <main>
+    <!-- this is the container consisting of question and answer choices aka option -->
+    <div class="container">
+      <div class="row">
+        <div class="col one">
+          Question
+          <div id="question"></div>
         </div>
-        
+
+        <div class="col two">
+          Option
+          <div class="optionButtons">
+            <input type="button" value="" class="optionClass" id="myButton1"></input>
+            <br>
+            <input type="button" value="" class="optionClass" id="myButton2"></input>
+            <br>
+            <input type="button" value="" class="optionClass" id="myButton3"></input>
+
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
+  </main>
+
 
   <!-- a statement will appear if user chooses WRONG answer -->
   <div id="verifyAnswer"></div>
@@ -58,7 +61,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-  <script src="./script.js"></script>
+  <script src="./practice.js"></script>
 </body>
 
 </html>

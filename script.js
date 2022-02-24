@@ -1,40 +1,41 @@
 //creating object of questions,options,and answers
-let questionSet = [
+const questionSet = [
   {
-    question: '1. Which data type stores TRUE or FALSE values?',
+    question: '1) Which data type stores TRUE or FALSE values?',
     option: ['array', 'number', 'boolean'],
     answer: 'boolean'
   },
   {
-    question: '2. String values must be enclosed in ______?',
+    question: '2) String values must be enclosed in ______?',
     option: ['brackets', 'quotes', 'semicolon'],
     answer: 'quotes'
   },
   {
-    question: '3. Which of the following is not a common way to declare variables anymore?',
+    question: '3) Which of the following is not a common way to declare variables anymore?',
+    option: ['let', 'var', 'const'],
+    answer: 'var'
+  },
+  {
+    question: '3) Which of the following is not a common way to declare variables anymore?',
     option: ['let', 'var', 'const'],
     answer: 'var'
   }
-  // },
-  // {
-  //   question: '4. String values must be enclosed in ______?',
-  //   option: ['let', 'var', 'const'],
-  //   answer: 'var'
-  // }
-]
+];
 
 
 //if start button pressed, then container (containing the question/options) appear and triggers the entire runthrough of the game
 document.getElementById('start').addEventListener('click', event => {
   event.preventDefault();
   document.querySelector('.container').style.visibility = 'visible';
+  
   takeQuiz();
-  gameOver();
+
 })
 
 
 let questionNumber = 0;
 let scoreCount = 0;
+
 function takeQuiz() {
   //will display first question
   document.getElementById('question').textContent = questionSet[questionNumber].question;
@@ -43,7 +44,7 @@ function takeQuiz() {
   document.getElementById('myButton1').value = questionSet[questionNumber].option[0]
   document.getElementById('myButton2').value = questionSet[questionNumber].option[1]
   document.getElementById('myButton3').value = questionSet[questionNumber].option[2]
-
+  
 
   //checking for each answer choice ; if correct, score increases by 10 ; if wrong answer, deducts -2 points
   document.getElementById('myButton1').addEventListener('click', event => {
@@ -77,7 +78,7 @@ function takeQuiz() {
       scoreCount -= 2;
       document.getElementById('verifyAnswer').innerHTML = "WRONG, TRY AGAIN!"
     }
-  console.log(scoreCount)
+  
   })
   
 }
@@ -86,14 +87,15 @@ function takeQuiz() {
 function nextQuestion() {
   //gets rid of the 'wrong answer' sign from the previous question
   document.getElementById('verifyAnswer').innerHTML = "";
-  questionNumber = questionNumber + 1;
-  //if it is at the last question, will display final score
-  if (questionNumber==3) {
-    return;
+  
+  questionNumber++;
+  console.log(questionNumber);
+  if (questionNumber>questionSet.length) {
+    console.log(no);
+
   }
-  else {
-    takeQuiz();
-  }
+  takeQuiz();
+  
   
 }
 

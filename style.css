@@ -23,5 +23,6 @@ header {
 }
 
 .gameOver {
-  visibility: hidden;
+  color:white;
+  margin-left:10px;
 }
