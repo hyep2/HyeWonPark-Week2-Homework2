@@ -22,7 +22,6 @@ header {
   height: 15rem;
 }
 
-.optionButtons {
-  
-  
+.gameOver {
+  visibility: hidden;
 }
