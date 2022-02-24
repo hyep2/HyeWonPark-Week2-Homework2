@@ -1,0 +1,14 @@
+header {
+  margin-left: 2rem;
+}
+
+.hidden {
+  /* display:none; */
+
+}
+
+.container {
+  background-color: pink;
+  margin-left: 10px;
+  margin-top: 10px;
+}
