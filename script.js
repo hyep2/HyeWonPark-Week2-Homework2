@@ -23,12 +23,31 @@ const questionSet = [
 ];
 
 
+//timer
+
+let timeLeft = 90;
+function countdown() {
+  let timeInterval = setInterval(function () {
+    if (timeLeft > 0) {
+      document.getElementById('countdown').textContent = timeLeft;
+      timeLeft--;
+    }
+    else {
+      document.getElementById('countdown').textContent = "";
+      clearInterval(timeInterval);
+      gameOver();
+    }
+
+  }, 1000)
+}
+
+
 //default settings for quiz 
 let questionNumber = 0;
-let scoreCount = 100;
+let scoreCount = 0;
 
-function defaultQuiz () {
-  
+function defaultQuiz() {
+
   document.querySelector('.container').style.visibility = 'visible';
   document.getElementById('question').textContent = questionSet[questionNumber].question;
 
@@ -36,6 +55,7 @@ function defaultQuiz () {
   document.getElementById('myButton1').value = questionSet[questionNumber].option[0]
   document.getElementById('myButton2').value = questionSet[questionNumber].option[1]
   document.getElementById('myButton3').value = questionSet[questionNumber].option[2]
+  countdown();
 
 }
 
@@ -50,10 +70,11 @@ document.getElementById('start').addEventListener('click', event => {
 
 
 
-//checking for each answer choice ; if correct, calls on the nextQuestion() method ; if wrong answer, deducts -10 points; also when it reaches the last question, it will call the gameOver() method
+//checking for each answer choice ; if correct, gets +25 points and calls on the nextQuestion() method ; if wrong answer, deducts -10 points also gets deducted 10 seconds to time remaining; also when it reaches the last question, it will call the gameOver() method
 document.getElementById('myButton1').addEventListener('click', event => {
   if (questionSet[questionNumber].option[0] === questionSet[questionNumber].answer) {
     //run through this if statement if you complete the last question; this will make the container disappear and will call on the gameOver method;
+    scoreCount += 25;
     if (questionNumber == (questionSet.length - 1)) {
       document.getElementById('verifyAnswer').innerHTML = "";
       document.querySelector('.container').style.display = 'none';
@@ -64,12 +85,14 @@ document.getElementById('myButton1').addEventListener('click', event => {
   }
   else {
     scoreCount -= 10;
+    timeLeft -= 10;
     document.getElementById('verifyAnswer').innerHTML = "WRONG, TRY AGAIN!"
   }
 
 })
 document.getElementById('myButton2').addEventListener('click', event => {
   if (questionSet[questionNumber].option[1] === questionSet[questionNumber].answer) {
+    scoreCount += 25;
     if (questionNumber == (questionSet.length - 1)) {
       document.getElementById('verifyAnswer').innerHTML = "";
       document.querySelector('.container').style.display = 'none';
@@ -80,12 +103,14 @@ document.getElementById('myButton2').addEventListener('click', event => {
   }
   else {
     scoreCount -= 10;
+    timeLeft -= 10;
     document.getElementById('verifyAnswer').innerHTML = "WRONG, TRY AGAIN!"
   }
 
 })
 document.getElementById('myButton3').addEventListener('click', event => {
   if (questionSet[questionNumber].option[2] === questionSet[questionNumber].answer) {
+    scoreCount += 25;
     if (questionNumber == (questionSet.length - 1)) {
       document.getElementById('verifyAnswer').innerHTML = "";
       document.querySelector('.container').style.display = 'none';
@@ -96,6 +121,7 @@ document.getElementById('myButton3').addEventListener('click', event => {
   }
   else {
     scoreCount -= 10;
+    timeLeft -= 10;
     document.getElementById('verifyAnswer').innerHTML = "WRONG, TRY AGAIN!"
   }
 
@@ -122,6 +148,7 @@ function nextQuestion() {
 
 //when game is over, will display total score and a form where the user can save initials and score
 function gameOver() {
+  document.querySelector('.container').style.display = 'none';
   document.querySelector('.gameOver').style.visibility = 'visible';
   document.getElementById('score').innerHTML = scoreCount;
 
@@ -188,14 +215,15 @@ document.getElementById('eraseBtn').addEventListener('click', event => {
 //play again button
 document.getElementById('playAgainBtn').addEventListener('click', event => {
 
-  
+
   //game over sign should disappear
   document.querySelector('.gameOver').style.visibility = 'hidden';
 
   document.querySelector('.container').style.display = 'block';
   questionNumber = 0;
-  scoreCount = 100;
+  scoreCount = 0;
+  timeLeft = 90;
   defaultQuiz();
-  
- 
+
+
 })
