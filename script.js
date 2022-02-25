@@ -161,6 +161,7 @@ function renderPastScore() {
 
 //when you click Past Scores, you can see your past scores
 document.getElementById('modalBtn').addEventListener('click', event => {
+  event.preventDefault();
   //make modal visible
   document.getElementById('scoreModal').style.display = 'block';
 
@@ -168,11 +169,13 @@ document.getElementById('modalBtn').addEventListener('click', event => {
 
 //if you click on close button, the modal should disappear
 document.getElementById('closeBtn').addEventListener('click', event => {
+  event.preventDefault();
   document.getElementById('scoreModal').style.display = 'none';
 })
 
 //if you click on X button, the modal should also disappear
 document.getElementById('xBtn').addEventListener('click', event => {
+  event.preventDefault();
   document.getElementById('scoreModal').style.display = 'none';
 })
 

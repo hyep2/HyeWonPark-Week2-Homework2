@@ -1,42 +1,6 @@
-# 04 Web APIs: Code Quiz
+Project Name: Code Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+Objective: Create a multiple-choice, timed code quiz. It will feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
-## User Story
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
-
-The following animation demonstrates the application functionality:
-
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
-
-### Review
-
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+Description/Logic of App Development: The user can take the code quiz once he/she clicks on the start button which will make the quiz questions and answer choices appear subsequently. If user chooses the wrong question, he will be deducted 10 points from the total of 100 points. Also, another penalty is that the time is subtracted by 10 seconds from the clock. The game is over when user completes the quiz or time runs out. When game is over, user can save his initials and score, which can be viewed from clicking the 'view past scores' button. if the user wants to take the quiz again, he simply needs to press on the 'play again' button and the new score will be also added to the past score history. There will also be an option to clear the history. 
