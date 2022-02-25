@@ -23,6 +23,19 @@ header {
 }
 
 .gameOver {
-  color:white;
-  margin-left:10px;
+  color: black;
+  margin-left: 10px;
+  visibility: hidden;
+}
+
+#initial {
+  display: inline
+}
+
+.input {
+  width: 40px;
+}
+
+#scoreModal {
+  display: none;
 }

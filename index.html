@@ -50,11 +50,50 @@
   <!-- a statement will appear if user chooses WRONG answer -->
   <div id="verifyAnswer"></div>
 
+  <!-- what happens after game ends -->
   <div class="gameOver">
     <h2>Game Over</h2>
     <h3>Your total score is: <span id="score">0</span></h3>
-    <!-- need to put form -->
+
+    <!-- form where user will submit their intials -->
+    <form action="/action_page.php">
+      <label for="initial">Initials:</label>
+      <input type="text" id="initial" name="initial">
+    </form>
+    <button id="submitBtn">Submit to Record Score</button>
+    <br>
+    <button id="playAgainBtn"  class="btn btn-success">Play Again</button>
   </div>
+
+  <!-- modal for viewing past scores -->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id='modalBtn'>
+    View Past Scores
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Past Scores</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="xBtn">
+            <span aria-hidden="true">&times; </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ol id="listScores"> </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeBtn">Close</button>
+          <button type="button" class="btn btn-primary" id="eraseBtn">Erase Past Scores</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
